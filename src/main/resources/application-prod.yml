@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: journalapp
+  data:
+    mongodb:
+      uri: mongodb+srv://pratikneel02:pratik15122504@cluster0.zh2j6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: journaldb
+      auto-index-creation: true
+  main:
+    allow-circular-references: true
