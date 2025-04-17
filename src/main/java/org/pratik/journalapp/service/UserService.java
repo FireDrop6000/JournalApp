@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.pratik.journalapp.entity.User;
 import org.pratik.journalapp.repository.UserRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,7 +19,6 @@ public class UserService {
     private UserRepository userRepository;
 
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
 
     public List<User> getAll() {
         return userRepository.findAll();

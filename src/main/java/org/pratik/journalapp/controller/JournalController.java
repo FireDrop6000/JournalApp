@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.pratik.journalapp.entity.JournalEntry;
-import org.pratik.journalapp.service.JournalService;
+import org.pratik.journalapp.service.JournalEntryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class JournalController {
 
     @Autowired
-    private JournalService journalService;
+    private JournalEntryService journalService;
 
     @GetMapping("/all")
     public ResponseEntity<?> getAllEntries() {

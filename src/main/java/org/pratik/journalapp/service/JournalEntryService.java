@@ -8,21 +8,18 @@ import org.pratik.journalapp.entity.JournalEntry;
 import org.pratik.journalapp.entity.User;
 import org.pratik.journalapp.repository.JournalRepository;
 import org.pratik.journalapp.repository.UserRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class JournalService {
+public class JournalEntryService {
 
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
     private JournalRepository journalRepository;
-
 
     public List<JournalEntry> getAll(String username) {
         try {

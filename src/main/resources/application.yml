@@ -1,4 +1,8 @@
 spring:
   profiles:
     active:
-    - prod
+      - prod
+
+weather:
+  api:
+    key: 290c1c1e53a66cf34935d8825cfbbdaf
