@@ -23,10 +23,12 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     private ObjectId id;
-    
+
     @Indexed(unique = true)
     @Nonnull
     private String username;
+    private String email;
+    private boolean sentimentAnalysis;
 
     @Nonnull
     private String password;

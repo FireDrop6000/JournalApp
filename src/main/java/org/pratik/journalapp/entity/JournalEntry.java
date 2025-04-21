@@ -3,6 +3,7 @@ package org.pratik.journalapp.entity;
 import java.time.LocalDateTime;
 
 import org.bson.types.ObjectId;
+import org.pratik.journalapp.enums.Sentiment;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -23,4 +24,6 @@ public class JournalEntry {
     private String content;
 
     private LocalDateTime date;
+
+    private Sentiment sentiment;
 }
