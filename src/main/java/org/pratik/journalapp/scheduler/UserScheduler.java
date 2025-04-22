@@ -13,7 +13,6 @@ import org.pratik.journalapp.entity.User;
 import org.pratik.journalapp.enums.Sentiment;
 import org.pratik.journalapp.repository.UserRepositoryImpl;
 import org.pratik.journalapp.service.EmailService;
-import org.pratik.journalapp.service.SentimentAnalysisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -25,8 +24,6 @@ public class UserScheduler {
     private EmailService emailService;
     @Autowired
     private UserRepositoryImpl userRepository;
-    @Autowired
-    private SentimentAnalysisService sentimentAnalysisService;
     @Autowired
     private AppCache appCache;
 
@@ -54,7 +51,8 @@ public class UserScheduler {
             }
             if (mostFrequentSentiment != null) {
                 emailService.sendEmail(user.getEmail(), "Sentiment for last 7 days",
-                        mostFrequentSentiment.toString());
+                        mostFrequentSentiment.toString()
+                                + "\nThis is an automated system generated mail sent for testing purposes. Please contact sender if you have any inconvenience with service.");
             }
         }
     }
