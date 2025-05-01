@@ -20,6 +20,9 @@ public class RedisService {
     public <T> T get(String key, Class<T> entityClass) {
         try {
             Object o = redisTemplate.opsForValue().get(key);
+            if (o == null) {
+                log.warn("No value found for key " + key);
+            }
             ObjectMapper mapper = new ObjectMapper();
             return mapper.readValue(o.toString(), entityClass);
         } catch (Exception e) {
